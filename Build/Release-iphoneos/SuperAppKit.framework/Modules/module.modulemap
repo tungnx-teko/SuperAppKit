@@ -1,0 +1,11 @@
+framework module SuperAppKit {
+  umbrella header "SuperAppKit.h"
+
+  export *
+  module * { export * }
+}
+
+module SuperAppKit.Swift {
+    header "SuperAppKit-Swift.h"
+    requires objc
+}

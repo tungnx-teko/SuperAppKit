@@ -1,0 +1,31 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
+// swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SuperAppKit
+@_exported import SuperAppKit
+import Swift
+import UIKit
+@_hasMissingDesignatedInitializers public class AppManager {
+  public static let shared: SuperAppKit.AppManager
+  public var appNames: [Swift.String] {
+    get
+  }
+  public func register(appName: Swift.String, application: UIKit.UIApplication)
+  public func unregister(appName: Swift.String)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class Window : UIKit.UIWindow {
+  @objc override dynamic public var rootViewController: UIKit.UIViewController? {
+    @objc get
+    @objc set
+  }
+  @objc deinit
+  @available(iOS 13.0, *)
+  @objc override dynamic public init(windowScene: UIKit.UIWindowScene)
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc public class AppContainer : ObjectiveC.NSObject {
+  public init(_ window: SuperAppKit.Window)
+  @objc deinit
+  @objc override dynamic public init()
+}
